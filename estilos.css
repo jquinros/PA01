@@ -1,0 +1,98 @@
+/* Variables CSS */
+:root {
+    --color-principal: #1d3557;
+    --color-secundario: #f1faee;
+    --color-acento: #e63946;
+    --espaciado: 20px;
+    --fuente-principal: 'Segoe UI', sans-serif;
+}
+
+/* Hack visual: reset de box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-secundario);
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: var(--espaciado);
+    text-align: center;
+}
+
+.intro {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #a8dadc;
+    margin: 0;
+    padding: 10px;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--color-acento);
+}
+
+/* Secciones */
+main {
+    padding: calc(var(--espaciado) * 1.5);
+}
+
+h2 {
+    color: var(--color-principal);
+    position: relative;
+}
+
+h2::before {
+    content: "⚽ ";
+}
+
+/* Listas */
+ol, ul {
+    padding-left: 20px;
+}
+
+/* Estilo especial para el primer elemento de lista */
+ul li:first-child, ol li:first-child {
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+/* Footer */
+#footer-text {
+    background-color: #ccc;
+    text-align: center;
+    padding: var(--espaciado);
+    font-size: 0.9em;
+    margin-top: var(--espaciado);
+}
+
+/* Funciones */
+main {
+    font-size: calc(1rem + 0.2vw);
+}
