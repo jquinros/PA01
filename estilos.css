@@ -1,98 +1,138 @@
-/* Variables CSS */
+/* Variables globales */
 :root {
-    --color-principal: #1d3557;
-    --color-secundario: #f1faee;
-    --color-acento: #e63946;
-    --espaciado: 20px;
-    --fuente-principal: 'Segoe UI', sans-serif;
+  --color-fondo: #ffffff;
+  --color-principal: #222;
+  --color-acento: #aa9ff7;
+  --color-claro: #ffffff;
+  --fuente-principal: 'Arial', sans-serif;
+  --espaciado: 1.5rem;
+  --borde-radio: 10px;
 }
 
-/* Hack visual: reset de box-sizing */
+/* Reset básico */
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilos generales */
 body {
-    font-family: var(--fuente-principal);
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-secundario);
-    color: #333;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-principal);
+  padding: var(--espaciado);
+  line-height: 1.6;
 }
 
 /* Encabezado */
 header {
-    background-color: var(--color-principal);
-    color: white;
-    padding: var(--espaciado);
-    text-align: center;
+  background-color: var(--color-acento);
+  color: var(--color-claro);
+  padding: var(--espaciado);
+  text-align: center;
+  border-radius: var(--borde-radio);
+  margin-bottom: var(--espaciado);
 }
 
-.intro {
-    font-size: 1.2em;
-    margin-top: 5px;
+header h1 {
+  font-size: 2.5rem;
 }
 
-/* Navegación */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background-color: #a8dadc;
-    margin: 0;
-    padding: 10px;
-}
-
-nav li {
-    margin: 0 15px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--color-principal);
-    font-weight: bold;
+  color: var(--color-claro);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-    color: var(--color-acento);
+  color: #ffdd57;
 }
 
 /* Secciones */
-main {
-    padding: calc(var(--espaciado) * 1.5);
+section {
+  margin-bottom: var(--espaciado);
+  padding: var(--espaciado);
+  background-color: var(--color-claro);
+  border: 1px solid #ddd;
+  border-radius: var(--borde-radio);
 }
 
-h2 {
-    color: var(--color-principal);
-    position: relative;
+section h2 {
+  margin-bottom: 0.5rem;
+  color: var(--color-acento);
 }
 
-h2::before {
-    content: "⚽ ";
+#intro{
+  text-align: center;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.galeria img {
+  width: calc(33% - 1rem);
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+.imagen1 {
+  display: block;
+  max-width: 100%;
+  border-radius: var(--borde-radio);
+  justify-self: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Listas */
-ol, ul {
-    padding-left: 20px;
-}
-
-/* Estilo especial para el primer elemento de lista */
-ul li:first-child, ol li:first-child {
-    color: var(--color-acento);
-    font-weight: bold;
+ul, ol {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
 }
 
 /* Footer */
-#footer-text {
-    background-color: #ccc;
-    text-align: center;
-    padding: var(--espaciado);
-    font-size: 0.9em;
-    margin-top: var(--espaciado);
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #777;
 }
 
-/* Funciones */
+/* Responsive hack con media query */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .galeria img {
+    width: 100%;
+  }
+
+  body {
+    background-color: #eef;
+  }
+}
+
+/* Función CSS */
 main {
-    font-size: calc(1rem + 0.2vw);
+  min-height: calc(100vh - 200px);
 }
